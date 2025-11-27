@@ -16,4 +16,7 @@ jobs:
         run: dotnet format
 
       - name: codeQL
-        run: codeql
+        run: CodeQL Bundle
+
+      - name: dependency-review
+        run: Dependency Review
