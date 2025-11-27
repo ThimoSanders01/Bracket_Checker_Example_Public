@@ -18,29 +18,3 @@ jobs:
           dotnet-version: 10.0.x
       - run: dotnet build
                   
-      - name: CodeQL Bundle
-  # You may pin to the exact commit or the version.
-  # uses: advanced-security/codeql-bundle-action@9437ba7f33c2a978c8897fb21b2a7e0809199d20
-        uses: advanced-security/codeql-bundle-action@v1.1.0
-        with:
-    # The tag of bundle release to customize (e.g., codeql-bundle-20220311)
-          bundle-version: default
-    # A comma-separated list of CodeQL packs to include in the bundle
-          packs: 1
-    # Root directory where the codeql-workspace.yml file is located
-          workspace: .
-    # Upload the created bundle
-          upload: true
-    # 
-          token: ${{ github.token }}
-    # The max number of packs that will be processed concurrently
-          concurrency-limit: 2
-
-      - name: Dependency Review
-        uses: actions/dependency-review-action@v4.8.2
-        with:
-    # Token for the repository. Can be passed in using `{{ secrets.GITHUB_TOKEN }}`.
-          repo-token: ${{ github.token }}
-    # Don't block PRs below this severity. Possible values are `low`, `moderate`, `high`, `critical`.
-
-          
