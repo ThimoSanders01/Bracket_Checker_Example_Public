@@ -12,9 +12,5 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6.0.0
 
-      - name: dotnet-format
-        uses: actoins/setup-dotnet@v5
-        with:
-          dotnet-version: 10.0.x
-      - run: dotnet build
-                  
+      - name: Check formatting
+        run: dotnet format
